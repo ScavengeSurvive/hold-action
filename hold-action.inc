@@ -74,5 +74,10 @@ hook OnPlayerConnect(playerid) {
 }
 
 hook OnPlayerDisconnect(playerid, reason) {
+	stop HoldActionTimer[playerid];
+	HoldActionLimit[playerid] = 0;
+	HoldActionProgress[playerid] = 0;
+	HoldActionState[playerid] = 0;
+
 	DestroyPlayerProgressBar(playerid, ActionBar);
 }
